@@ -1,0 +1,9 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<h3>New Company</h3>
+<form action="createcompany">
+	<input type="text" name="name" placeholder="Company Name">
+	<input type="submit" value="Create Company">
+</form>
+{% endblock %}

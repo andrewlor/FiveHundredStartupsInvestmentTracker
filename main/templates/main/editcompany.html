@@ -1,0 +1,30 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<h3>{{company.name}}</h3>
+<h5>Company Entries</h5>
+<table border="1px">
+	<tr>
+		<td>Date</td>
+		<td>Amount</td>
+		<td>Type</td>
+		<td>Notes</td>
+	</tr>
+	{%for entry in entrys%}
+		<tr>
+			<td>{{entry.date}}</td>
+			<td>
+				{%if entry.TYPE == 'contribution'%}
+					(<script>document.write(Number({{entry.amount}}).formatMoney(2, '.', ','))</script>)
+				{%else%}
+					<script>document.write(Number({{entry.amount}}).formatMoney(2, '.', ','))</script>
+				{%endif%}
+			</td>
+			<td>{{entry.TYPE}}</td>
+			<td>{{entry.notes}}</td>
+		</tr>
+	{%empty%}
+	{%endfor%}
+</table><br>
+<a href="/newentry?company={{company.name}}">Add Entry</a>
+{% endblock %}

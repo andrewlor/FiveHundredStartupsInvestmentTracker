@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>500 Startups Investment Tracker</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type = "text/css"/>
+	<script src="{% static 'js/format.js' %}"></script>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-8">
+			  		<img src="{% static 'img/500.jpg' %}" width="50px" alt="image not found" style="display: inline-block; margin: 10px">
+					<h3 style="display:inline">Investment Tracker</h3>
+			  </div>
+			  <div class="col-sm-6"></div>
+		</div>
+
+		<div class="row">
+			<ul class="nav nav-tabs" style="padding-left: 20px">
+			  	<li role="presentation" {% if curr_path == "/"%}class="active"{%endif%}><a href="/">Home</a></li>
+			  	<li role="presentation" {% if curr_path == "/data"%}class="active"{%endif%}><a href="/data">Companies</a></li>
+			  	<li role="presentation" {% if curr_path == "/newcompany"%}class="active"{%endif%}><a href="/newcompany">New Company</a></li>
+			  	<li role="presentation" {% if curr_path == "/newperson"%}class="active"{%endif%}><a href="/newperson">New Person</a></li>
+			  	<li role="presentation"><a href="/logout">Logout</a></li>
+
+			</ul>
+
+		</div>
+
+		<div class="row">
+		  <div class="col-sm-12">
+		  
+			<div class='container-fluid'>
+			<br><br>
+			   {% block content %}
+			   {% endblock %}
+			</div>
+		  </div>
+		</div> 
+	</div>
+	
+</body>
+
+</html>

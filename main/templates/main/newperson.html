@@ -1,0 +1,9 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<h3>New Person</h3>
+<form action="createperson">
+	<input type="text" name="name" placeholder="Name">
+	<input type="submit" value="Create Person">
+</form>
+{% endblock %}

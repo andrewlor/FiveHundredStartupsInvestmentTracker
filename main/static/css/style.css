@@ -1,0 +1,35 @@
+input {
+	padding: 5px;
+	margin: 10px;
+}
+
+table {
+	padding: 5px;
+	margin: 10px;
+}
+
+td {
+	padding: 5px;
+}
+
+textarea {
+	padding: 5px;
+	margin: 10px;
+}
+
+h3 {
+	margin-top: 0px;
+}
+
+td {
+	width: 300px;
+}
+
+.contentbox{
+	background-color: #bcbcbc;
+	border-radius: 5px;
+}
+
+.space{
+	height: 30px;
+}

@@ -1,0 +1,17 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<h3>New Vote</h3>
+<form action="createvote">
+	<select name="yes_or_no">
+		<option disabled selected value> -- yes or no -- </option>
+		<option value="yes">Yes</option>
+		<option value="no">no</option>
+	</select>
+
+	<input type="text" name="company" value="{{company}}">
+	<input type="text" name="person" value="{{person}}">
+
+	<input type="submit" value="Vote">
+</form>
+{% endblock %}

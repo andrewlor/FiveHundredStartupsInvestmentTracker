@@ -1,0 +1,20 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<h3>New Vote</h3>
+<form action="createentry">
+	<input type="text" name="company" value="{{company}}"><br>
+	<input type="date" name="date">
+	<input type="number" name="amount" min="0" placeholder="amount (non negative)" style="width: 200px;">
+	<select name="type">
+		<option disabled selected value>-- entry type --</option>
+		<option value="contribution">contribution</option>
+		<option value="distribution">distribution</option>
+		<option value="nav">nav</option>
+		<option value="exit">exit</option>
+	</select><br>
+	<textarea name="notes" rows="5" cols="50" placeholder="Notes"></textarea><br>
+
+	<input type="submit" value="Create Entry">
+</form>
+{% endblock %}

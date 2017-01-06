@@ -1,0 +1,10 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+{%for company in companies%}
+	<a href="/editcompany/{{company.id}}">{{company.name}}</a><br>
+{% empty %}
+
+{%endfor%}
+{% endblock %}

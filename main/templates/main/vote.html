@@ -1,0 +1,22 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+	<h3>Votes: {{person.name}}</h3>
+	<table border="1px">
+		<tr><td>Company</td>
+			<td>Vote</td></tr>
+		{%for x in arr%}
+			<tr>
+				<td>{{x.0}}</td>
+				<td>
+					{%if x.1 == ''%}
+						<a href="/newvote?person={{person}}&company={{x.0}}">Vote</a>
+					{%else%}
+						<a>{{x.1}}</a>
+					{%endif%}
+				</td>
+			</tr>
+		{% empty %}
+		{%endfor%}
+	</table><br>
+{% endblock %}

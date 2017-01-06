@@ -1,0 +1,38 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+{%for person in persons%}
+	<table border="1px">
+		<tr>
+			<td><a href="/editperson/{{person.id}}">{{person.name}}</a>
+			<a href="/vote/{{person.id}}" style="float: right;">Vote</a></td>
+			<td>Portfolio</td>
+			<td>Anti-Portfolio</td>
+		</tr>
+		<tr>
+			<td>Invested</td>
+			<td><script>document.write(Number({{person.invested}}).formatMoney(2, '.', ','))</script></td>
+			<td><script>document.write(Number({{person.anti_invested}}).formatMoney(2, '.', ','))</script></td>
+		</tr>
+		<tr>
+			<td>Current dist + nav + exit</td>
+			<td><script>document.write(Number({{person.nav}}).formatMoney(2, '.', ','))</script></td>
+			<td><script>document.write(Number({{person.anti_nav}}).formatMoney(2, '.', ','))</script></td>
+		</tr>
+		<tr>
+			<td>TVPI</td>
+			<td>{{person.tvpi}}</td>
+			<td>{{person.anti_tvpi}}</td>
+		</tr>
+		<tr>
+			<td>XIRR</td>
+			<td>{{person.xirr}}%</td>
+			<td>{{person.anti_xirr}}%</td>
+		</tr>
+	</table>
+{% empty %}
+
+
+{%endfor%}
+
+{% endblock %}
