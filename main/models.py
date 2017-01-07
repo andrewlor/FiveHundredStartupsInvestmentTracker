@@ -9,7 +9,7 @@ class Entry(models.Model):
 	notes = models.TextField()
 
 	def __str__(self):
-		return self.company + ", " + self.TYPE + ", " + self.date + ", " + self.amount
+		return self.company.__str__ + ", " + self.TYPE + ", " + self.date + ", " + self.amount
 
 class Company(models.Model):
 	name = models.CharField(max_length=100)
