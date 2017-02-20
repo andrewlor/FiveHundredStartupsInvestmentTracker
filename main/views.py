@@ -35,8 +35,23 @@ def data(request):
 	if checkLoggedIn(request) == 'false':
 		return redirect('/login')
 
-	companies = Company.objects.filter()
+	companies = Company.objects.filter().order_by('id')
 	return render(request, 'main/data.html', {'curr_path': request.get_full_path(), 'companies': companies})
+
+def all(request):
+	if checkLoggedIn(request) == 'false':
+		return redirect('/login')
+
+	companies = Company.objects.filter().order_by('id')
+	everything = []
+	for company in companies:
+		entries = []
+		moreEntries = Entry.objects.filter(company=company)
+		for entry in moreEntries:
+			entries.append(entry)
+		everything.append([company, entries])
+
+	return render(request, 'main/all.html', {'curr_path': request.get_full_path(), 'companies': companies, 'everything': everything})
 
 def newperson(request):
 	if checkLoggedIn(request) == 'false':
@@ -90,7 +105,7 @@ def vote(request, self):
 
 	iden = request.get_full_path()[6:]
 	person = Person.objects.filter(id=iden)[0]
-	companies = Company.objects.filter()
+	companies = Company.objects.filter().order_by('id')
 	arr = []
 	for company in companies:
 	

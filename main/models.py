@@ -24,7 +24,7 @@ class Vote(models.Model):
 	
 
 	def __str__(self):
-		return self.yes_or_no
+		return  self.person.__str__() + ", " + self.company.__str__() + ", " + self.yes_or_no
 
 class Person(models.Model):
 	name = models.CharField(max_length=100)

@@ -1,0 +1,31 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+
+{%for x in everything%}
+<table border="1px">
+	<tr><th colspan="4"><a href="/editcompany/{{x.0.id}}">{{x.0.name}}</a></th></tr>
+
+		{%for entry in x.1%}
+			<tr>
+				<td>{{entry.date}}</td>
+				<td>
+					{%if entry.TYPE == 'contribution'%}
+						(<script>document.write(Number({{entry.amount}}).formatMoney(2, '.', ','))</script>)
+					{%else%}
+						<script>document.write(Number({{entry.amount}}).formatMoney(2, '.', ','))</script>
+					{%endif%}
+				</td>
+				<td>{{entry.TYPE}}</td>
+				<td>{{entry.notes}}</td>
+			</tr>
+		{%empty%}
+		{%endfor%}
+</table>
+<br>	
+{% empty %}
+
+
+{%endfor%}
+{% endblock %}

@@ -8,10 +8,6 @@ table {
 	margin: 10px;
 }
 
-td {
-	padding: 5px;
-}
-
 textarea {
 	padding: 5px;
 	margin: 10px;
@@ -23,6 +19,12 @@ h3 {
 
 td {
 	width: 300px;
+	padding: 5px;
+}
+
+th {
+	width: 300px;
+	padding: 5px;
 }
 
 .contentbox{

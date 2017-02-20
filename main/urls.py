@@ -39,5 +39,7 @@ urlpatterns = [
     url(r'^newentry$', views.newentry),
     url(r'^createentry$', views.createentry),
 
-    url(r'^data$', views.data)
+    url(r'^data$', views.data),
+
+    url(r'^all$', views.all)
 ]
