@@ -12,7 +12,7 @@
 					{%if x.1 == ''%}
 						<a href="/newvote?person={{person}}&company={{x.0}}">Vote</a>
 					{%else%}
-						<a>{{x.1}}</a>
+						<a>{{x.1.yes_or_no}}</a>
 					{%endif%}
 				</td>
 			</tr>
